@@ -1,0 +1,22 @@
+version: 2
+
+
+models:
+  - name: stg_ecoflux_users
+    columns:
+      - name: user_id
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_daily_product_usage
+    description: 'The primary fact table for EcoFlux Product Metrics. used in Looker Studio.'
+    columns:
+      - name: daily_active_users
+        tests:
+          - not_null
+      - name: smart_charge_adoption_rate
+        description: '% of DAU who scheduled a smart charge today'
+          
+          
+          
