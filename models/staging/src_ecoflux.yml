@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: raw_ecoflux
+    database: ecoflux-490009
+    schema: raw_ecoflux
+    tables:
+      - name: users
+      - name: events
