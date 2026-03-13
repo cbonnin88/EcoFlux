@@ -19,7 +19,7 @@ SELECT
 
     -- Product Hook: Smart Charge Adoption Rate
     SAFE_DIVIDE(
-        COUNT(DISTINCT CASE WHEN e.event_type = ' Schedule Smart Charge' THEN e.user_id END),
+        COUNT(DISTINCT CASE WHEN e.event_type = 'Schedule Smart Charge' THEN e.user_id END),
         COUNT(DISTINCT e.user_id)
     ) AS smart_charge_adoption_rate
 FROM events AS e
