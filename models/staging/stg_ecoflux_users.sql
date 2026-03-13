@@ -6,7 +6,7 @@ WITH source AS (
 
 SELECT
     CAST(user_id AS string) AS user_id,
-    DATE(CAST(signup_date AS date)) AS signup_date,
+    SAFE.PARSE_TIMESTAMP('%Y-%m-%dT%H:%M:%E*S', signup_date) AS signup_at,
     UPPER(country) as country_name,
     subscription_plan as plan_level,
     device_type
