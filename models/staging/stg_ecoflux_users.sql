@@ -6,7 +6,7 @@ WITH source AS (
 
 SELECT
     CAST(user_id AS string) AS user_id,
-    CAST(signup_date AS date) AS signup_date,
+    DATE(CAST(signup_date AS date)) AS signup_date,
     UPPER(country) as country_name,
     subscription_plan as plan_level,
     device_type
