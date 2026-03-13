@@ -7,6 +7,7 @@ WITH source AS (
 SELECT
     CAST(user_id AS STRING) AS user_id,
     -- Converting the 'time' column (ms) to BigQuery TimeStamp
+    DATE(CAST(event_date AS DATETIME)) AS event_date,
     TIMESTAMP_MILLIS(CAST(time as INT64)) AS event_at,
     country,
     subscription_plan AS plan_level,
