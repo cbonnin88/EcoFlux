@@ -26,4 +26,4 @@ SELECT
 FROM events AS e
 JOIN users AS u
     ON e.user_id = u.user_id
-GROUP BY 1,2,3,4
+GROUP BY 1,2,3,4,5
