@@ -9,6 +9,7 @@ events AS (
 )
 
 SELECT
+    u.user_id,
     DATE(e.event_at) AS event_date,
     u.country_name,
     u.plan_level,
