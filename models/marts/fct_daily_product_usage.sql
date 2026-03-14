@@ -14,6 +14,7 @@ SELECT
     u.country_name,
     u.plan_level,
     u.device_type,
+    AVG(e.activity_score) as avg_activity_score,
     COUNT(DISTINCT e.user_id) AS daily_active_users,
     COUNTIF(e.event_type = 'Schedule Smart Charge') AS total_smart_charges,
     SUM(e.estimated_co2_saved_kg) AS total_c02_saved,
@@ -26,4 +27,4 @@ SELECT
 FROM events AS e
 JOIN users AS u
     ON e.user_id = u.user_id
-GROUP BY 1,2,3,4,5
+GROUP BY 1,2,3,4,5,6
